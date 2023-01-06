@@ -11,7 +11,7 @@ class Solution {
             }
             else
             {
-                ng+=1;
+                ng+ =1;
             }
 
         }
