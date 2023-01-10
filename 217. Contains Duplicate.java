@@ -28,7 +28,8 @@ class Solution {
         if(set.size()==nums.length)
         {
             return false;
-        }
+        } 
+        
         else
         {
             return true;
