@@ -21,6 +21,7 @@ class Solution {
             ArrayList<Integer> arr_rev = new ArrayList<>(arr);
             Collections.reverse(arr_rev);
             if(arr.equals(arr_rev))
+            
             {
                 return true;
             }
