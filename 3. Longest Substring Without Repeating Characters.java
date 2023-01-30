@@ -22,6 +22,7 @@ class Solution {
               streak +=1;
               maxstreak = Math.max(streak,maxstreak);
           }
+          
 
       }
 
