@@ -18,11 +18,11 @@ class MyHashMap {
         else
         {
             int pos = 0;
+            
             for(int i:keys)
             {
                 if(i==key)
                 {
-                    
                     break;
                 }
                 pos++;
