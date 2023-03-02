@@ -20,6 +20,7 @@ class Solution {
                 arr.add(nums2[i]);
             }
 
+            
         }
 
         Collections.sort(arr);
