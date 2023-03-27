@@ -2,7 +2,7 @@ class Solution {
     public boolean containsDuplicate(int[] nums) {
         
         //BRUTE FORCE
-        /*ArrayList<Integer> arr =new ArrayList<>();
+        ArrayList<Integer> arr =new ArrayList<>();
         for(int i:nums)
         {
             if(arr.contains(i))
@@ -17,7 +17,7 @@ class Solution {
 
         return false;
 
-*/
+
 
 
 
