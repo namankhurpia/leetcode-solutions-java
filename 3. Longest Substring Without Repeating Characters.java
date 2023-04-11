@@ -1,32 +1,21 @@
+// Optimal solution -  O(n)
 class Solution {
     public static int lengthOfLongestSubstring(String s) {
 
-      int streak =0;
-      int maxstreak = 0;
-
-      ArrayList<Character> arr = new ArrayList<Character>();
+      ArrayList<Character> set = new ArrayList<Character>();
+      int left = 0;
+      int max =0;
       for(int i=0;i<s.length();i++)
       {
-          if(arr.contains(s.charAt(i)))
+          while(set.contains(Character.valueOf(s.charAt(i))))
           {
-              //System.out.println("clearing array");
-              arr.clear();
-              arr.add(s.charAt(i));
-              //System.out.println("streak add :"+s.charAt(i));
-              streak = 1;
+              set.remove(left);
           }
-          else
-          {
-              //System.out.println("streak add :"+s.charAt(i));
-              arr.add(s.charAt(i));
-              streak +=1;
-              maxstreak = Math.max(streak,maxstreak);
-          }
-          
 
+          set.add(s.charAt(i));
+          max = Math.max(max, set.size());
       }
-
-      return maxstreak;
+      return max;
 
   }
 
