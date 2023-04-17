@@ -8,6 +8,7 @@ class Solution {
 
         int []s1arr = new int[26];
         int []s2arr = new int[26];
+        
 
         for(int i=0;i<s1.length();i++)
         {
