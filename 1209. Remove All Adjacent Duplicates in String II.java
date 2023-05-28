@@ -62,3 +62,36 @@ class Solution {
 
     }
 }
+
+//OPTIMAL SOLUTION - using stacks - O(n)
+
+class Solution {
+    public String removeDuplicates(String s, int k) {
+        
+    StringBuilder str = new StringBuilder(s);
+    Stack<Integer> count =new Stack<Integer>();
+    for(int i=0;i<str.length();i++)
+    {
+        if(i==0 || str.charAt(i-1)!=str.charAt(i))
+        {
+            count.push(1);
+        }
+        else
+        {
+            int temp = count.pop() +1 ;
+            if(temp == k)
+            {
+                str.delete(i-k+1,i+1);
+                i=i-k;
+            }
+            else
+            {
+                count.push(temp);
+            }
+        }
+        
+    }
+    return str.toString();
+
+    }
+}
