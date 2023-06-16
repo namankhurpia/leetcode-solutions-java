@@ -26,6 +26,7 @@ class Solution {
 
 //one liner solution
 
+
 class Solution {
     public int strStr(String haystack, String needle) {
 
