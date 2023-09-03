@@ -1,7 +1,6 @@
 1907. Count Salary Categories
 Medium
-221
-52
+
 SQL Schema
 Pandas Schema
 Table: Accounts
