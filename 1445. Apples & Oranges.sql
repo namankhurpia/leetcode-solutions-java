@@ -59,3 +59,12 @@ select a.sale_date, a.sold_num-b.sold_num as 'diff' from Sales a, Sales b where 
 
 SELECT a.sale_date, a.sold_num-b.sold_num as 'diff' from Sales a  JOIN Sales b where a.fruit = 'apples' and b.fruit = 'oranges' and a.sale_date = b.sale_date GROUP BY a.sale_date;
 
+
+SELECT a.sale_date, a.sold_num - b.sold_num as 'diff'  
+from
+(select sale_date, sold_num from Sales where fruit = ('apples')) a 
+JOIN
+(select sale_date, sold_num from Sales where fruit = ('oranges')) b
+ON
+a.sale_date = b.sale_date
+GROUP BY a.sale_date;
