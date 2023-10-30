@@ -34,14 +34,7 @@ class Tree
         
         if(h>=res.size())
         {
-            if(root.left==null)
-            {
-                res.add(root.data);
-            }
-            else
-            {
-                res.add(root.data);
-            }
+            res.add(root.data);
         }
         Traverse(root.left, res, h+1);
         Traverse(root.right, res, h+1);
