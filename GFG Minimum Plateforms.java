@@ -13,7 +13,7 @@ class Solution
         
         int i=1,j =0;
         int pla =1;
-        int res =0;
+        int res =1;
         
         while( i<n && j<n)
         {

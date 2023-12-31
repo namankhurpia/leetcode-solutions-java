@@ -9,8 +9,6 @@ class meetingcomparator implements Comparator<meeting>
             return -1;
         else if (m1.end>m2.end)
             return 1;
-        else if (m1.pos<m2.pos)
-            return -1;
         else 
             return 1;
     }
