@@ -38,6 +38,12 @@ class Solution {
 
 //OPTIMAL - O(n)
 
+//intuition - https://www.youtube.com/watch?v=oO5uLE7EUlM&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=29
+// add all numbers to hashset to avoid all duplicates, now we will check for streak. 
+//current streak will be your current pointers streak and max streak will be maximum streak yet,
+// loop over your set, and on a while loop check if next bigger number exists and increase your current streak
+// if not then you can try finding another starting point and make your current streak 1.
+
 class Solution {
     public int longestConsecutive(int[] nums) {
         
@@ -74,4 +80,6 @@ class Solution {
         
     }
 }
+
+
 
