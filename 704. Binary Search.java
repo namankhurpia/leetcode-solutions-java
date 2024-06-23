@@ -1,5 +1,6 @@
 //best solution - log(n)
 
+// take 2 pointers for index, initalized at 0 and length-1, now find the middle and shift pointers accodringly
 class Solution {
     public int search(int[] nums, int target) {
         
