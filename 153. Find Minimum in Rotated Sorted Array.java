@@ -16,8 +16,9 @@ class Solution {
             }
 
             int mid = (l+r)/2;
+            
             min = Math.min(nums[mid],min);
-            System.out.println(min);
+            
             if(nums[mid]>=nums[l])
             {
                 l = mid+1;
