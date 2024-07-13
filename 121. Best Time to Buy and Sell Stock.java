@@ -16,6 +16,7 @@ class Solution {
         */
 
         //single pass approach
+        // logic - Need to find the maximum difference between the prices[i] and prices[j] where i<j
         int lowest_yet = Integer.MAX_VALUE;
         int highest_yet = 0;
         int maxdiff = 0;

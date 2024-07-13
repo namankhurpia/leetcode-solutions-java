@@ -25,8 +25,13 @@ class Solution {
 
     }
 
+    //DFS
+    //O(m x n)
+    // this code will change the value of the grid to 0 if it is 1 and will also change the value of the neighbouring 1's to 0
+
     public static void recrusive_dfs(char[][] grid , int row, int column)
     {
+        //base case - this will be called when the row or column is out of bounds or the value is 0
         if(row<0 || column<0 || row>=grid.length || column>= grid[0].length || grid[row][column]=='0')
         {
             return;
