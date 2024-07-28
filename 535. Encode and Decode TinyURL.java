@@ -9,6 +9,7 @@ public class Codec {
         int rd = (int)Math.random();
         rd = rd % 62;
         for(int i=0;i<6;i++)
+        
         {
             res+= chars.charAt(rd);
         }
