@@ -20,3 +20,4 @@ round(
   (select avg(timestamp) from Activity a2 where activity_type = 'start' and a2.machine_id = a1.machine_id ) ,3) as 'processing_time' 
   from Activity a1 
   GROUP BY machine_id;
+  
