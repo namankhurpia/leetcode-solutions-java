@@ -26,5 +26,17 @@ Return the result table in any order.
 The result format is in the following example.
 
 
-
+//solution 1
 select name from Employee as t1 JOIN(select managerId from Employee group by managerId HAVING COUNT(ManagerId)>=5) as t2 on t1.id = t2.managerId 
+
+
+//solution 2
+select e1.name from Employee e1 
+JOIN Employee e2 
+ON e1.id = e2.managerId
+GROUP BY e2.managerId
+HAVING COUNT(e2.managerId) >= 5;
+
+
+
+
