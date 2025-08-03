@@ -42,6 +42,13 @@ class Solution {
 
 //python
 
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(0, len(nums)):
+            for j in range (i+1, len(nums)):
+                if target - nums[i] == nums[j]:
+                    return [i,j]
+
 //using hashmap / dictionary
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -68,3 +75,4 @@ class Solution:
             dictionary[nums[i]] = i
         
         return null
+
