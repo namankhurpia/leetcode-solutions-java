@@ -83,3 +83,26 @@ class Solution {
 
 
 
+//O(n) - Python3
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+
+        if not nums:
+            return 0
+
+        myset = set(nums)
+        maximum = 0
+        localmax = 0
+
+        for i in myset:
+            if i-1 not in myset:
+                maximum = 1
+                while(i+1 in myset):
+                    maximum+=1
+                    i+=1
+                localmax = max(maximum,localmax)
+        
+        return localmax
+
+        

@@ -31,9 +31,7 @@ class Solution {
                 
                 maxdiff = Math.max(maxdiff, prices[i]-lowest_yet);
             }
-            
-            
-            
+        
 
         }
         return maxdiff;
