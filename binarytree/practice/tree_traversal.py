@@ -57,13 +57,16 @@ def postorder_dfs(root):
     print(root)
     
     
+if __name__ == "__main__":
+    A = makeTree()
+   
+    print("printing pre order")
+    preorder_dfs(A)
+    print("printing in order")
+    inorder_dfs(A)
+    print("printing post order")
+    postorder_dfs(A)
 
 
-A = makeTree()
-print("printing pre order")
-preorder_dfs(A)
-print("printing in order")
-inorder_dfs(A)
-print("printing post order")
-postorder_dfs(A)
+
 
