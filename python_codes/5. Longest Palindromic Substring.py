@@ -1,73 +1,59 @@
-//python optimised solution - neetcode - outer expansion approach
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        longest_palindrome_coordinates = [0,0]
 
-class Solution(object):
-    def longestPalindrome(self, s):
-        # storing my result and the length of longest result
-        res = ""
-        resLen = 0
-
-        for i in range(0, len(s)):
-            # consider i as center of substring
-            # if odd len string - if the palindrome is odd len
-            l = i
-            r = i
-            #is the substring a palindrome?
-            while(l>=0 and r<len(s) and s[l] == s[r]):
-                #if existing result is longer than previous stored result
-                if(r-l+1> resLen):
-                    res = s[l:r+1]
-                    resLen = len(res)
-                #expanding from center 
-                l -=1
-                r +=1
-            # if even len string - if the palindrome is odd len
-            l = i
-            r = i+1
-            #is the substring a palindrome?
-            while(l>=0 and r<len(s) and s[l] == s[r]):
-                #if existing result is longer than previous stored result
-                if(r-l+1>resLen):
-                    res = s[l:r+1]
-                    resLen = len(res)
-                l-=1
-                r+=1
-        
-        return res
-    
-//java code with same logic
-
-class Solution {
-    public String longestPalindrome(String s) {
-
-        String even = "";
-        String odd = "";
-        String maxStr = s.substring(0,1);
-
-        for(int i=0;i<s.length()-1;i++)
-        {
-            odd = expandfromcenter(i,i,s);
-            even = expandfromcenter(i,i+1,s);
+        def expand_from_center(left,right):
+            while(left >=0 and right<len(s) and s[left]==s[right]):
+                left -=1
+                right += 1
             
-            if(odd.length()> maxStr.length())
-            {
-                maxStr = odd;
-            }
-            if(even.length()> maxStr.length())
-            {
-                maxStr = even;
-            }
-        }
-        return maxStr;
+            return right-left-1
+        
+        for i in range(len(s)):
+            odd_range = expand_from_center(i,i)
+            if odd_range > longest_palindrome_coordinates[1] - longest_palindrome_coordinates[0] +1:
+                distance = odd_range // 2
+                longest_palindrome_coordinates = [i-distance, i+distance]
 
-    }
+            #print(longest_palindrome_coordinates)
 
-    public static String expandfromcenter(int left, int  right, String s)
-    {
-        while(left >= 0 && right< s.length() && s.charAt(left) == s.charAt(right))
-        {
-            left --;
-            right ++;
-        }
-        return s.substring(left+1, right);
-    }
-}
+            even_range = expand_from_center(i,i+1)
+            if even_range > longest_palindrome_coordinates[1] - longest_palindrome_coordinates[0] +1:
+                distance = (even_range // 2 )-1 
+                longest_palindrome_coordinates = [i-distance, i+distance +1]
+            
+            #print(longest_palindrome_coordinates)
+        
+        i,j = longest_palindrome_coordinates
+        
+        return s[i:j+1]
+        
+
+
+
+
+            
+
+"""
+
+
+       
+Complexity Analysis
+
+Given n as the length of s,
+
+Time complexity: O(n 
+2
+ )
+
+There are 2n−1=O(n) centers. For each center, we call expand, which costs up to O(n).
+
+Although the time complexity is the same as in the DP approach, the average/practical runtime of the algorithm is much faster. This is because most centers will not produce long palindromes, so most of the O(n) calls to expand will cost far less than n iterations.
+
+The worst case scenario is when every character in the string is the same.
+
+Space complexity: O(1)
+
+We don't use any extra space other than a few integers. This is a big improvement on the DP approach.
+
+""" 
